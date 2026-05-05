@@ -1,0 +1,109 @@
+:root {
+  --navy: #0a192f;
+  --turquoise: #64ffda;
+  --purple: #7000ff;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  color: var(--white);
+  background: radial-gradient(circle at 20% 20%, #132b52, #060b16 45%, #03060c);
+}
+.container { width: min(1120px, 92vw); margin: 0 auto; }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(10, 25, 47, 0.55);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.18);
+}
+.nav-wrap { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; gap: 18px; }
+.logo { color: var(--white); text-decoration: none; font-weight: 700; display:flex; align-items:center; gap:10px; }
+.logo-orb { width:14px;height:14px;border-radius:50%;background:var(--turquoise);box-shadow:0 0 18px var(--turquoise); animation:pulse 2s infinite; }
+.nav-links { list-style:none; display:flex; gap:24px; padding:0; margin:0; }
+.nav-links a { color:#cfe7ff; text-decoration:none; }
+.cta-btn {
+  text-decoration: none;
+  border: none; color:#061021; background: linear-gradient(135deg, var(--turquoise), #7ef8e0);
+  padding: 10px 18px; border-radius: 999px; font-weight: 700;
+}
+.hero { min-height: 78vh; display: grid; place-items: center; position: relative; }
+.hero-bg {
+  position:absolute; inset:0;
+  background: url('https://via.placeholder.com/1920x1080?text=Gora+Insurance') center/cover no-repeat;
+  opacity: .2;
+}
+.hero-content { position:relative; z-index: 1; }
+h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4rem); margin: 0 0 10px; }
+.eyebrow { color: var(--turquoise); letter-spacing: .1em; text-transform: uppercase; }
+.lead { max-width: 760px; color: #d8e8ff; line-height: 1.7; }
+.glass-card {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 22px;
+  backdrop-filter: blur(18px);
+}
+.card-pad { padding: 22px; }
+section { padding: 72px 0; }
+.section-head h2 { font-family:'Plus Jakarta Sans'; margin:0 0 8px; }
+.section-head p { color: #d8e8ff; }
+.story-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; }
+.bento-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.bento-item { overflow:hidden; border-radius:18px; position:relative; min-height:220px; background: rgba(255,255,255,.06); }
+.bento-item img { width:100%; height:100%; object-fit: cover; display:block; }
+.bento-item div { position:absolute; bottom:0; width:100%; padding:14px; background:linear-gradient(transparent, rgba(0,0,0,.65)); }
+.tall { grid-row: span 2; }
+.wide { grid-column: span 2; }
+.contact-grid { display:grid; grid-template-columns: 1fr 1.2fr; gap:16px; align-items: stretch; }
+.mail-link { color: var(--turquoise); font-weight: 700; }
+.map-wrap { min-height: 360px; overflow: hidden; }
+.map-wrap iframe { width: 100%; height: 100%; border: 0; min-height: 360px; }
+.site-footer { background: #040913; border-top: 1px solid rgba(255,255,255,.12); padding: 32px 0; }
+.footer-grid { display:grid; gap:10px; }
+.reveal { opacity:0; transform: translateY(24px); transition: all .7s ease; }
+.reveal.visible { opacity:1; transform: translateY(0); }
+
+.partners { padding-top: 24px; }
+.logo-carousel {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(14px);
+  padding: 16px 0;
+}
+.logo-track {
+  display: flex;
+  width: max-content;
+  gap: 14px;
+  animation: scrollLogos 20s linear infinite;
+}
+.logo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  min-height: 56px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(10,25,47,.75);
+  border: 1px solid rgba(100,255,218,.3);
+}
+.logo-pill img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.45));
+}
+@keyframes scrollLogos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulse { 50% { box-shadow: 0 0 32px var(--turquoise); } }
+@media (max-width: 960px) {
+  .nav-links { display:none; }
+  .bento-grid { grid-template-columns: repeat(2,1fr); }
+  .story-grid, .contact-grid { grid-template-columns: 1fr; }
+}
