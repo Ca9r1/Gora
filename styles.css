@@ -67,34 +67,20 @@ section { padding: 72px 0; }
 .partners { padding-top: 24px; }
 .logo-carousel {
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 18px;
-  background: rgba(255,255,255,.06);
-  backdrop-filter: blur(14px);
-  padding: 16px 0;
+  padding: 10px 0;
 }
 .logo-track {
   display: flex;
-  width: max-content;
-  gap: 14px;
-  animation: scrollLogos 20s linear infinite;
-}
-.logo-pill {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-width: 110px;
-  min-height: 56px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  background: rgba(10,25,47,.75);
-  border: 1px solid rgba(100,255,218,.3);
+  width: max-content;
+  gap: 40px;
+  animation: scrollLogos 24s linear infinite;
 }
-.logo-pill img {
-  width: 34px;
-  height: 34px;
+.partner-logo {
+  width: 180px;
+  height: 64px;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.45));
+  flex: 0 0 auto;
 }
 @keyframes scrollLogos {
   from { transform: translateX(0); }
