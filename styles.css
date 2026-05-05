@@ -83,13 +83,18 @@ section { padding: 72px 0; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 180px;
+  min-width: 110px;
+  min-height: 56px;
   padding: 12px 16px;
   border-radius: 999px;
   background: rgba(10,25,47,.75);
   border: 1px solid rgba(100,255,218,.3);
-  color: #dff8ff;
-  font-weight: 600;
+}
+.logo-pill img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.45));
 }
 @keyframes scrollLogos {
   from { transform: translateX(0); }
