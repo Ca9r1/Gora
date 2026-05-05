@@ -64,27 +64,35 @@ section { padding: 72px 0; }
 .reveal { opacity:0; transform: translateY(24px); transition: all .7s ease; }
 .reveal.visible { opacity:1; transform: translateY(0); }
 
-.partners { padding-top: 24px; }
+.partners { padding-top: 20px; }
 .logo-carousel {
   overflow: hidden;
-  padding: 10px 0;
+  display: grid;
+  gap: 18px;
+  padding: 12px 0 4px;
 }
 .logo-track {
   display: flex;
   align-items: center;
   width: max-content;
-  gap: 40px;
-  animation: scrollLogos 24s linear infinite;
+  gap: 28px;
 }
+.row-1 { animation: scrollLogos 24s linear infinite; }
+.row-2 { animation: scrollLogosReverse 26s linear infinite; }
 .partner-logo {
-  width: 180px;
-  height: 64px;
+  width: 220px;
+  height: 88px;
   object-fit: contain;
   flex: 0 0 auto;
+  padding: 10px;
 }
 @keyframes scrollLogos {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+@keyframes scrollLogosReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
 @keyframes pulse { 50% { box-shadow: 0 0 32px var(--turquoise); } }
