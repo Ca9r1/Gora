@@ -64,15 +64,17 @@ section { padding: 72px 0; }
 .map-wrap { min-height: 360px; overflow: hidden; }
 .map-wrap iframe { width: 100%; height: 100%; border: 0; min-height: 360px; }
 .partners { width: 100%; padding: 20px 0 24px; }
-.logo-carousel { overflow: hidden; width: 100vw; margin-left: calc(50% - 50vw); padding: 12px 0 4px; }
-.logo-track { display: flex; align-items: center; width: max-content; gap: 22px; animation: scrollLogos 25s linear infinite; }
+.logo-carousel { position: relative; overflow: hidden; width: 100vw; margin-left: calc(50% - 50vw); padding: 12px 0 4px; min-height: 132px; }
+.logo-track { position: absolute; top: 12px; left: 0; display: flex; align-items: center; width: max-content; gap: 22px; animation: marqueeA 24s linear infinite; will-change: transform; }
+.logo-track.row-2 { animation-name: marqueeB; }
 .partner-card { min-width: 270px; min-height: 120px; display: flex; align-items: center; justify-content: center; }
 .partner-logo { width: 220px; height: 88px; object-fit: contain; flex: 0 0 auto; }
 .site-footer { background: #040913; border-top: 1px solid rgba(255,255,255,.12); padding: 32px 0; }
 .footer-grid { display:grid; gap:10px; }
 .reveal { opacity:0; transform: translateY(24px); transition: all .7s ease; }
 .reveal.visible { opacity:1; transform: translateY(0); }
-@keyframes scrollLogos { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marqueeA { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+@keyframes marqueeB { from { transform: translateX(100%); } to { transform: translateX(0); } }
 @media (max-width: 960px) {
   .nav-links { display:none; }
   .bento-grid { grid-template-columns: repeat(2,1fr); }
