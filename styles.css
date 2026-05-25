@@ -14,6 +14,24 @@ body {
   font-family: Inter, sans-serif;
   color: var(--white);
   background: radial-gradient(circle at 20% 20%, #1a3070, #0D1F4E 46%, #08122e);
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(6, 12, 30, 0.7), rgba(6, 12, 30, 0.75)),
+    url('images/seyehat.webp') left -120px top / 42vw auto no-repeat,
+    url('images/sirket.webp') right -120px top 12vh / 40vw auto no-repeat,
+    url('images/konut.webp') left -100px bottom -60px / 38vw auto no-repeat,
+    url('images/arac.webp') right -80px bottom -80px / 36vw auto no-repeat;
+  opacity: 0.18;
+  filter: saturate(0.9) blur(1px);
 }
 main { flex: 1; overflow: hidden; }
 .container { width: min(1120px, 92vw); margin: 0 auto; }
@@ -35,7 +53,14 @@ main { flex: 1; overflow: hidden; }
 h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4rem); margin: 0 0 10px; }
 .eyebrow { color: #ffd7de; letter-spacing: .1em; text-transform: uppercase; }
 .lead { max-width: 760px; color: #d8e8ff; line-height: 1.7; }
-.glass-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); border-radius: 22px; backdrop-filter: blur(18px); }
+.glass-card {
+  background: linear-gradient(155deg, rgba(255,255,255,.2), rgba(255,255,255,.07));
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 22px;
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 14px 32px rgba(0,0,0,.2);
+}
 .card-pad { padding: 22px; }
 section { padding: 72px 0; }
 .section-head h2 { font-family:'Plus Jakarta Sans'; margin:0 0 8px; }
