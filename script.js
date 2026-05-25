@@ -41,6 +41,8 @@ anchorLinks.forEach((link) => {
 
 const blob = document.getElementById('blob');
 const cards = document.querySelectorAll('.glass-card');
+const maxTilt = 4;
+const influenceRadius = 360;
 
 if (!prefersReducedMotion) {
   window.addEventListener('pointermove', (event) => {
@@ -49,10 +51,20 @@ if (!prefersReducedMotion) {
 
     cards.forEach((card) => {
       const rect = card.getBoundingClientRect();
-      const dx = clientX - (rect.left + rect.width / 2);
-      const dy = clientY - (rect.top + rect.height / 2);
-      const xRotation = Math.max(-8, Math.min(8, -dy / 28));
-      const yRotation = Math.max(-8, Math.min(8, dx / 28));
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const dx = clientX - centerX;
+      const dy = clientY - centerY;
+      const distance = Math.hypot(dx, dy);
+
+      if (distance > influenceRadius) {
+        card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+        return;
+      }
+
+      const strength = 1 - distance / influenceRadius;
+      const xRotation = Math.max(-maxTilt, Math.min(maxTilt, (-dy / 45) * strength));
+      const yRotation = Math.max(-maxTilt, Math.min(maxTilt, (dx / 45) * strength));
       card.style.transform = `perspective(1200px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
     });
   });
