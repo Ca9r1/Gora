@@ -1,8 +1,9 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #f5f5f0; font-family: 'Georgia', serif; }
@@ -181,12 +182,33 @@
   .kittl-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 6px; letter-spacing: 0.5px; }
   .kittl-list { font-size: 11px; color: rgba(255,255,255,0.65); line-height: 2; }
   .kittl-list span { display: block; }
-  .kittl-list span::before { content: "→ "; color: #C41E3A; font-weight: 700; }
+   .kittl-list span::before { content: "→ "; color: #C41E3A; font-weight: 700; }
+
+  .section { margin-bottom: 22px; }
+
+  @media (max-width: 960px) {
+    .page { padding: 16px; }
+    .logo-variants { grid-template-columns: 1fr; }
+    .variant { padding: 28px 16px; }
+    .color-row { grid-template-columns: repeat(2, 1fr); }
+    .usage-grid { grid-template-columns: 1fr; }
+    .tagline-card { flex-direction: column; align-items: flex-start; }
+    .tl-accent { width: 64px; height: 4px; }
+    .story-card { padding: 28px 20px; }
+    .story-founders { flex-direction: column; gap: 14px; }
+  }
+
+  @media (max-width: 520px) {
+    .color-row { grid-template-columns: 1fr; }
+    .tl-main { font-size: 19px; }
+  }
+
 </style>
 </head>
 <body>
 <div class="page">
 
+  <section class="section">
   <p class="section-label">Logo Tasarımı · Kittl için</p>
 
   <!-- LOGO VARIANTS -->
@@ -274,6 +296,7 @@
       <span style="font-size:10px; color:#ccc; margin-left:8px;">Favicon · App icon · Mühür</span>
     </div>
   </div>
+  </section>
 
   <!-- COLOR PALETTE -->
   <p class="section-label">Kurumsal Renk Paleti</p>
@@ -316,7 +339,7 @@
     <div class="tl-accent" style="background:#888;"></div>
     <div>
       <div class="tl-main" style="font-size:16px; color:#555;">İki İsim, Binlerce Güven</div>
-      <div class="tl-sub">Kurucu Hikâyesi Versiyonu</div>
+      <div class="tl-sub">Kurucu Hikâyesi Sloganı</div>
     </div>
   </div>
 
@@ -382,7 +405,7 @@
         <span>Kalkan formu: Kittl'daki "Shield" şekli ile oluştur, köşeleri yumuşat</span>
         <span>Lacivert: #0D1F4E · Kırmızı: #C41E3A · Beyaz: #FFFFFF</span>
         <span>Letter-spacing GORA: +100 (geniş harf aralığı kurumsal hava yaratır)</span>
-        <span>SİGORTA alt yazısı: +300 letter-spacing, %60 opaklık</span>
+        <span>SİGORTA alt yazısı: +300 harf aralığı, %60 opaklık</span>
         <span>Kırmızı yatay çizgi: kalınlık 2pt, logo genişliğinin %85'i</span>
         <span>Dışa aktar: SVG + PNG (300dpi, şeffaf zemin) + PDF vektör</span>
       </div>
