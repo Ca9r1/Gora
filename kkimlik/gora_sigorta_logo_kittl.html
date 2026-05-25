@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f0; font-family: 'Georgia', serif; }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 24px; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ───── LOGO CARD ───── */
+  .logo-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .logo-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .variant {
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .v-light { background: #ffffff; }
+  .v-dark  { background: #0D1F4E; }
+  .v-red   { background: #C41E3A; }
+
+  .variant-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .v-light .variant-label { color: #aaa; }
+  .v-dark  .variant-label { color: rgba(255,255,255,0.4); }
+  .v-red   .variant-label { color: rgba(255,255,255,0.5); }
+
+  /* ───── COLORS ───── */
+  .color-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .color-chip {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+  }
+  .chip-swatch { height: 64px; }
+  .chip-info { background: #fff; padding: 10px 12px; }
+  .chip-name { font-size: 11px; font-weight: 700; color: #333; letter-spacing: 0.5px; }
+  .chip-hex  { font-size: 10px; color: #888; font-family: monospace; }
+
+  /* ───── STORY ───── */
+  .story-card {
+    background: #0D1F4E;
+    border-radius: 16px;
+    padding: 36px 40px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .story-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    font-size: 160px;
+    color: rgba(196,30,58,0.15);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .story-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #C41E3A;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .story-text {
+    font-size: 14px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.82);
+    max-width: 700px;
+  }
+  .story-text strong { color: #fff; font-weight: 600; }
+
+  .story-founders {
+    margin-top: 28px;
+    display: flex;
+    gap: 24px;
+  }
+  .founder-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .founder-initials {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; letter-spacing: 1px;
+  }
+  .fi-g { background: #C41E3A; color: #fff; }
+  .fi-r { background: rgba(255,255,255,0.12); color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
+  .founder-name { font-size: 12px; color: rgba(255,255,255,0.7); }
+  .founder-title { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+
+  /* ───── TAGLINE ───── */
+  .tagline-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .tl-accent { width: 4px; height: 60px; background: #C41E3A; border-radius: 2px; flex-shrink: 0; }
+  .tl-main { font-size: 22px; font-weight: 700; color: #0D1F4E; letter-spacing: -0.3px; }
+  .tl-sub { font-size: 12px; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+
+  /* ───── USAGE ───── */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .usage-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  }
+  .usage-icon {
+    width: 32px; height: 32px;
+    background: #0D1F4E;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .usage-title { font-size: 12px; font-weight: 700; color: #0D1F4E; margin-bottom: 4px; letter-spacing: 0.3px; }
+  .usage-desc  { font-size: 11px; color: #888; line-height: 1.6; }
+
+  /* ───── KITTL NOTE ───── */
+  .kittl-note {
+    background: linear-gradient(135deg, #0D1F4E 0%, #1a3070 100%);
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .kittl-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .kittl-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 6px; letter-spacing: 0.5px; }
+  .kittl-list { font-size: 11px; color: rgba(255,255,255,0.65); line-height: 2; }
+  .kittl-list span { display: block; }
+  .kittl-list span::before { content: "→ "; color: #C41E3A; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="section-label">Logo Tasarımı · Kittl için</p>
+
+  <!-- LOGO VARIANTS -->
+  <div class="logo-card">
+    <div class="logo-variants">
+
+      <!-- LIGHT -->
+      <div class="variant v-light">
+        <svg width="180" height="90" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+          <!-- Shield emblem -->
+          <path d="M26 8 L50 8 L50 48 Q50 62 38 70 Q26 62 26 48 Z" fill="#0D1F4E"/>
+          <path d="M30 12 L46 12 L46 47 Q46 58 38 65 Q30 58 30 47 Z" fill="#ffffff"/>
+          <!-- GO inside shield -->
+          <text x="38" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#0D1F4E">GO</text>
+          <!-- Red accent bar -->
+          <rect x="26" y="68" width="24" height="3" rx="1.5" fill="#C41E3A"/>
+          <!-- GORA text -->
+          <text x="70" y="38" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#0D1F4E" letter-spacing="2">GORA</text>
+          <!-- SİGORTA text -->
+          <text x="71" y="56" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="5">SİGORTA</text>
+          <!-- Thin rule -->
+          <line x1="70" y1="62" x2="172" y2="62" stroke="#C41E3A" stroke-width="1.5"/>
+          <!-- Tagline -->
+          <text x="70" y="74" font-family="Georgia, serif" font-size="7.5" fill="#aaa" letter-spacing="1.5">GÜVENİN ADRESİ</text>
+        </svg>
+        <div class="variant-label" style="color:#bbb;">Beyaz Zemin</div>
+      </div>
+
+      <!-- DARK -->
+      <div class="variant v-dark">
+        <svg width="180" height="90" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26 8 L50 8 L50 48 Q50 62 38 70 Q26 62 26 48 Z" fill="#ffffff"/>
+          <path d="M30 12 L46 12 L46 47 Q46 58 38 65 Q30 58 30 47 Z" fill="#0D1F4E"/>
+          <text x="38" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#ffffff">GO</text>
+          <rect x="26" y="68" width="24" height="3" rx="1.5" fill="#C41E3A"/>
+          <text x="70" y="38" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">GORA</text>
+          <text x="71" y="56" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="5">SİGORTA</text>
+          <line x1="70" y1="62" x2="172" y2="62" stroke="#C41E3A" stroke-width="1.5"/>
+          <text x="70" y="74" font-family="Georgia, serif" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">GÜVENİN ADRESİ</text>
+        </svg>
+        <div class="variant-label">Lacivert Zemin</div>
+      </div>
+
+      <!-- RED -->
+      <div class="variant v-red">
+        <svg width="180" height="90" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26 8 L50 8 L50 48 Q50 62 38 70 Q26 62 26 48 Z" fill="#ffffff"/>
+          <path d="M30 12 L46 12 L46 47 Q46 58 38 65 Q30 58 30 47 Z" fill="#C41E3A"/>
+          <text x="38" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#ffffff">GO</text>
+          <rect x="26" y="68" width="24" height="3" rx="1.5" fill="#0D1F4E"/>
+          <text x="70" y="38" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">GORA</text>
+          <text x="71" y="56" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.6)" letter-spacing="5">SİGORTA</text>
+          <line x1="70" y1="62" x2="172" y2="62" stroke="#0D1F4E" stroke-width="1.5"/>
+          <text x="70" y="74" font-family="Georgia, serif" font-size="7.5" fill="rgba(255,255,255,0.5)" letter-spacing="1.5">GÜVENİN ADRESİ</text>
+        </svg>
+        <div class="variant-label">Kırmızı Zemin</div>
+      </div>
+
+    </div>
+
+    <!-- ICON ONLY ROW -->
+    <div style="border-top: 1px solid #f0f0f0; padding: 24px; display:flex; gap:24px; align-items:center;">
+      <span style="font-size:10px; letter-spacing:2px; color:#aaa; text-transform:uppercase; font-weight:700;">Simge Versiyonu</span>
+      <!-- icon light -->
+      <svg width="44" height="52" viewBox="0 0 44 52" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4 L40 4 L40 32 Q40 46 22 52 Q4 46 4 32 Z" fill="#0D1F4E"/>
+        <path d="M8 8 L36 8 L36 31 Q36 43 22 48 Q8 43 8 31 Z" fill="#fff"/>
+        <text x="22" y="34" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#0D1F4E">GO</text>
+        <rect x="4" y="48" width="36" height="3" rx="1.5" fill="#C41E3A"/>
+      </svg>
+      <!-- icon dark -->
+      <svg width="44" height="52" viewBox="0 0 44 52" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4 L40 4 L40 32 Q40 46 22 52 Q4 46 4 32 Z" fill="#fff"/>
+        <path d="M8 8 L36 8 L36 31 Q36 43 22 48 Q8 43 8 31 Z" fill="#0D1F4E"/>
+        <text x="22" y="34" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">GO</text>
+        <rect x="4" y="48" width="36" height="3" rx="1.5" fill="#C41E3A"/>
+      </svg>
+      <!-- icon red -->
+      <svg width="44" height="52" viewBox="0 0 44 52" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4 L40 4 L40 32 Q40 46 22 52 Q4 46 4 32 Z" fill="#C41E3A"/>
+        <path d="M8 8 L36 8 L36 31 Q36 43 22 48 Q8 43 8 31 Z" fill="#fff"/>
+        <text x="22" y="34" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#C41E3A">GO</text>
+        <rect x="4" y="48" width="36" height="3" rx="1.5" fill="#0D1F4E"/>
+      </svg>
+      <span style="font-size:10px; color:#ccc; margin-left:8px;">Favicon · App icon · Mühür</span>
+    </div>
+  </div>
+
+  <!-- COLOR PALETTE -->
+  <p class="section-label">Kurumsal Renk Paleti</p>
+  <div class="color-row">
+    <div class="color-chip">
+      <div class="chip-swatch" style="background:#0D1F4E;"></div>
+      <div class="chip-info"><div class="chip-name">Lacivert</div><div class="chip-hex">#0D1F4E</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="chip-swatch" style="background:#C41E3A;"></div>
+      <div class="chip-info"><div class="chip-name">Güven Kırmızısı</div><div class="chip-hex">#C41E3A</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="chip-swatch" style="background:#ffffff; border:1px solid #eee;"></div>
+      <div class="chip-info"><div class="chip-name">Saf Beyaz</div><div class="chip-hex">#FFFFFF</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="chip-swatch" style="background:#1a3070;"></div>
+      <div class="chip-info"><div class="chip-name">Lacivert Açık</div><div class="chip-hex">#1A3070</div></div>
+    </div>
+  </div>
+
+  <!-- TAGLINE -->
+  <p class="section-label">Kurumsal Sloganlar</p>
+  <div class="tagline-card" style="margin-bottom:12px;">
+    <div class="tl-accent"></div>
+    <div>
+      <div class="tl-main">Güvenin Adresi</div>
+      <div class="tl-sub">Ana Slogan · Tüm Mecralarda</div>
+    </div>
+  </div>
+  <div class="tagline-card" style="margin-bottom:12px;">
+    <div class="tl-accent" style="background:#0D1F4E;"></div>
+    <div>
+      <div class="tl-main" style="font-size:18px;">Yarınlarınızı Bugünden Güvence Altına Alıyoruz</div>
+      <div class="tl-sub">Uzun Versiyon · İletişim Materyalleri</div>
+    </div>
+  </div>
+  <div class="tagline-card" style="margin-bottom:20px;">
+    <div class="tl-accent" style="background:#888;"></div>
+    <div>
+      <div class="tl-main" style="font-size:16px; color:#555;">İki İsim, Binlerce Güven</div>
+      <div class="tl-sub">Kurucu Hikâyesi Versiyonu</div>
+    </div>
+  </div>
+
+  <!-- BRAND STORY -->
+  <p class="section-label">Kurumsal Kimlik Hikâyesi</p>
+  <div class="story-card">
+    <div class="story-title">Neden GORA?</div>
+    <div class="story-text">
+      <strong>GORA Sigorta</strong>, İstanbul'un en köklü bireysel sigorta portföyüne sahip iki ismin buluşmasından doğdu: <strong>Gonca</strong> ve <strong>Rabia</strong>. İsmin ilk iki harfi —GO ve RA— bu ortaklığın özünü taşır; her harfin ardında bir uzmanlık, bir ilke, bir söz vardır.<br><br>
+      Yıllar içinde biriktirilen deneyim, güven ve binlerce kişisel ilişki, GORA'yı İstanbul'un en büyük bireysel sigorta portföyüne sahip kurumu hâline getirdi. Seyahatten sağlığa, araçtan şirket varlıklarına, eşyadan çalışan haklarına kadar — GORA, müşterilerinin her yarınını dünyanın en güçlü sigorta şirketleriyle güvence altına alır.<br><br>
+      Güven satıyoruz. Çünkü güven, her şeyin temelidir.
+    </div>
+    <div class="story-founders">
+      <div class="founder-badge">
+        <div class="founder-initials fi-g">GO</div>
+        <div>
+          <div class="founder-name" style="font-size:12px; color:#fff; font-weight:600;">Gonca</div>
+          <div class="founder-title">Kurucu Ortak</div>
+        </div>
+      </div>
+      <div class="founder-badge">
+        <div class="founder-initials fi-r">RA</div>
+        <div>
+          <div class="founder-name" style="font-size:12px; color:#fff; font-weight:600;">Rabia</div>
+          <div class="founder-title">Kurucu Ortak</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USAGE AREAS -->
+  <p class="section-label">Hizmet Alanları (Logoyla Birlikte Kullanım)</p>
+  <div class="usage-grid">
+    <div class="usage-card">
+      <div class="usage-icon">✈️</div>
+      <div class="usage-title">Seyahat Sigortası</div>
+      <div class="usage-desc">Uluslararası seyahatlerde kaza, sağlık ve bagaj güvencesi.</div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-icon">🏠</div>
+      <div class="usage-title">Konut & Eşya</div>
+      <div class="usage-desc">Mal, mülk ve ev eşyalarına kapsamlı koruma.</div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-icon">🚗</div>
+      <div class="usage-title">Araç Sigortası</div>
+      <div class="usage-desc">Kasko ve trafik sigortasında premium portföy yönetimi.</div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-icon">🏢</div>
+      <div class="usage-title">Şirket & Çalışan</div>
+      <div class="usage-desc">Kurumsal varlık, işyeri ve çalışan sağlık poliçeleri.</div>
+    </div>
+  </div>
+
+  <!-- KITTL NOTE -->
+  <div class="kittl-note">
+    <div class="kittl-icon">🎨</div>
+    <div>
+      <div class="kittl-title">Kittl'a Aktarım Rehberi</div>
+      <div class="kittl-list">
+        <span>Font: Playfair Display Bold (Georgia alternatifi, Kittl'da mevcut)</span>
+        <span>Kalkan formu: Kittl'daki "Shield" şekli ile oluştur, köşeleri yumuşat</span>
+        <span>Lacivert: #0D1F4E · Kırmızı: #C41E3A · Beyaz: #FFFFFF</span>
+        <span>Letter-spacing GORA: +100 (geniş harf aralığı kurumsal hava yaratır)</span>
+        <span>SİGORTA alt yazısı: +300 letter-spacing, %60 opaklık</span>
+        <span>Kırmızı yatay çizgi: kalınlık 2pt, logo genişliğinin %85'i</span>
+        <span>Dışa aktar: SVG + PNG (300dpi, şeffaf zemin) + PDF vektör</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
