@@ -45,10 +45,18 @@ section { padding: 72px 0; }
 .founder-initial { font-size:1.4rem; font-weight:800; color:#ffd7de; margin-bottom:10px; }
 .founder-photo { width: 160px; height: 160px; border-radius: 14px; object-fit: cover; display:block; margin:0 auto 12px; border:2px solid rgba(255,255,255,.28); }
 .bento-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.bento-item { overflow:hidden; border-radius:18px; position:relative; min-height:220px; background: rgba(255,255,255,.06); display:flex; align-items:flex-end; }
+.bento-item { overflow:hidden; border-radius:18px; position:relative; min-height:320px; background: rgba(255,255,255,.06); display:flex; align-items:flex-end; }
 .bento-item img { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; display:block; }
-.bento-item div { width:100%; padding:18px; background:linear-gradient(transparent, rgba(0,0,0,.65)); }
+.bento-item div { width:100%; padding:20px; background:linear-gradient(transparent, rgba(0,0,0,.72)); position:relative; z-index:1; }
+.bento-item h3,
+.bento-item p { transform: translateX(44px); opacity: 0; transition: transform .45s ease, opacity .45s ease; }
+.bento-item h3 { margin: 0; transition-delay: .06s; }
 .bento-item p { margin:8px 0 0; color:#d8e8ff; }
+.bento-item:hover h3,
+.bento-item:hover p { transform: translateX(0); opacity: 1; }
+.bento-item:hover p { transition-delay: .12s; }
+.bento-item:hover img { transform: scale(1.06); transition: transform .6s ease; }
+.bento-item img { transition: transform .6s ease; }
 .tall { grid-row: span 2; }
 .wide { grid-column: span 2; }
 .contact-grid { display:grid; grid-template-columns: 1fr 1.2fr; gap:16px; align-items: stretch; }
@@ -70,6 +78,11 @@ section { padding: 72px 0; }
   .bento-grid { grid-template-columns: repeat(2,1fr); }
   .story-grid, .contact-grid, .founders-row, .slogan-grid { grid-template-columns: 1fr; }
   .founder-photo { width: 128px; height: 128px; }
+}
+
+@media (hover: none) {
+  .bento-item h3,
+  .bento-item p { transform: translateX(0); opacity: 1; }
 }
 
 .hero-logo-card { margin-top: 24px; background:#fff; padding: 16px 18px; border-radius: 14px; width: fit-content; box-shadow: 0 10px 28px rgba(0,0,0,.28); }
