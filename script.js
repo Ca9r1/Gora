@@ -1,3 +1,12 @@
+const productTrack = document.querySelector('.product-track');
+const productSet = productTrack?.querySelector('.product-set');
+
+if (productTrack && productSet) {
+  const duplicateProductSet = productSet.cloneNode(true);
+  duplicateProductSet.setAttribute('aria-hidden', 'true');
+  productTrack.appendChild(duplicateProductSet);
+}
+
 const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

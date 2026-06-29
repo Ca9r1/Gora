@@ -25,7 +25,10 @@
           <li><a href="#hizmetler">Hizmetler</a></li>
           <li><a href="#iletisim">Bize Ulaşın</a></li>
         </ul>
-        <a class="cta-btn" href="#iletisim">Teklif Konuşalım</a>
+        <a
+          class="cta-btn"
+          href="mailto:info@gorasigorta.com.tr?subject=GORA%20Sigorta%20Teklif%20Talebi"
+        >Teklif Al</a>
       </nav>
     </header>
 
@@ -67,13 +70,13 @@
           <div class="story-text">
             <p>
               <strong>GORA Sigorta</strong>, İstanbul'un en köklü bireysel sigorta portföyüne sahip iki ismin buluşmasından doğdu:
-              <strong>Gonca</strong> ve <strong>Rabia</strong>. İsmin ilk iki harfi —GO ve RA— bu ortaklığın özünü taşır; her harfin ardında
+              <strong>Gonca</strong> ve <strong>Rabia</strong>. İsmin ilk iki harfi, GO ve RA, bu ortaklığın özünü taşır; her harfin ardında
               bir uzmanlık, bir ilke, bir söz vardır.
             </p>
             <p>
               Yıllar içinde biriktirilen deneyim, güven ve binlerce kişisel ilişki, GORA'yı İstanbul'un en büyük bireysel
-              sigorta portföyüne sahip kurumu hâline getirdi. Seyahatten sağlığa, araçtan şirket varlıklarına,
-              eşyadan çalışan haklarına kadar — GORA, müşterilerinin her yarınını dünyanın en güçlü sigorta şirketleriyle
+              sigorta portföyüne sahip kurumlardan biri hâline getirdi. Seyahatten sağlığa, araçtan şirket varlıklarına,
+              eşyadan çalışan haklarına kadar, GORA, müşterilerinin her yarınını dünyanın en güçlü sigorta şirketleriyle
               güvence altına alır.
             </p>
             <p><strong>Güven satıyoruz. Çünkü güven, her şeyin temelidir.</strong></p>
@@ -81,15 +84,17 @@
           <div class="founders-row">
             <article class="founder-badge glass-card">
               <div class="founder-initial">GO</div>
-              <img src="https://placehold.co/480x480" alt="Gonca vesikalık görseli" class="founder-photo" />
+              <img src="images/gonca.webp" alt="Gonca'nın temsili profil fotoğrafı" class="founder-photo" />
               <h3>Gonca</h3>
               <p>Kurucu Ortak</p>
+              <a class="founder-mail" href="mailto:goncakopuz@gorasigorta.com.tr">E-posta Gönder</a>
             </article>
             <article class="founder-badge glass-card">
               <div class="founder-initial">RA</div>
               <img src="https://placehold.co/480x480" alt="Rabia vesikalık görseli" class="founder-photo" />
               <h3>Rabia</h3>
               <p>Kurucu Ortak</p>
+              <a class="founder-mail" href="mailto:rabiasaltik@gorasigorta.com.tr">E-posta Gönder</a>
             </article>
           </div>
         </div>
@@ -99,25 +104,27 @@
       <section class="container reveal" id="hizmetler">
         <div class="section-head">
           <h2>Hizmet Alanları</h2>
-          <p>Kurumsal logo ile birlikte kullanılan temel hizmet başlıklarımız.</p>
+          <p>Bireysel ve kurumsal ihtiyaçlarınız için sunduğumuz sigorta ürünleri.</p>
         </div>
-        <div class="bento-grid">
-          <article class="bento-item">
-            <img src="images/seyehat.webp" alt="Seyahat Sigortası görseli" />
-            <div><h3>Seyahat Sigortası</h3><p>Uluslararası seyahatlerde kaza, sağlık ve bagaj güvencesi.</p></div>
-          </article>
-          <article class="bento-item">
-            <img src="images/konut.webp" alt="Konut ve Eşya sigortası görseli" />
-            <div><h3>Konut & Eşya</h3><p>Mal, mülk ve ev eşyalarına kapsamlı koruma.</p></div>
-          </article>
-          <article class="bento-item">
-            <img src="images/arac.webp" alt="Araç Sigortası görseli" />
-            <div><h3>Araç Sigortası</h3><p>Kasko ve trafik sigortasında premium portföy yönetimi.</p></div>
-          </article>
-          <article class="bento-item">
-            <img src="images/sirket.webp" alt="Şirket ve Çalışan sigortası görseli" />
-            <div><h3>Şirket & Çalışan</h3><p>Kurumsal varlık, işyeri ve çalışan sağlık poliçeleri.</p></div>
-          </article>
+        <div class="product-carousel" aria-label="Sigorta ürünleri">
+          <div class="product-track">
+            <div class="product-set">
+              <article class="product-card" style="--product-image: url('images/arac.webp')"><span>Araç</span><h3>Trafik Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/kasko.webp')"><span>Araç</span><h3>Kasko Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/dask.webp')"><span>Ev</span><h3>DASK Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/konut2.webp')"><span>Ev</span><h3>Konut Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/saglik2.webp')"><span>Sağlık</span><h3>Tamamlayıcı Sağlık Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/saglik3.webp')"><span>Sağlık</span><h3>Özel Sağlık Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/seyehat.webp')"><span>Seyahat</span><h3>Seyahat Sağlık Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/saglik5.webp')"><span>Sağlık</span><h3>Yabancılara Sağlık Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/telefon.webp')"><span>Diğer</span><h3>Cep Telefonu Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/sirket.webp')"><span>İşletme</span><h3>İş Yeri Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/sirket.webp')"><span>Ticari</span><h3>Nakliyat Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/sirket.webp')"><span>Ticari</span><h3>Mühendislik Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/sirket.webp')"><span>Ticari</span><h3>Sorumluluk Sigortası</h3></article>
+              <article class="product-card" style="--product-image: url('images/sirket.webp')"><span>Ticari</span><h3>Özel Riskler Sigortası</h3></article>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -132,17 +139,19 @@
             <p>
               Ekibimiz size en kısa sürede dönüş yapar.
               <br />
-              <a class="mail-link" href="mailto:iletisim@gorainsurance.com?subject=Gora%20Insurance%20Bilgi%20Talebi">
-                iletisim@gorainsurance.com
+              <a class="mail-link" href="mailto:info@gorasigorta.com.tr?subject=GORA%20Sigorta%20Teklif%20Talebi">
+                info@gorasigorta.com.tr
               </a>
             </p>
+            <address>Mevlana Kapı Mah. Başbakkal Meydanı Sokak, Yıl Apt. No: 10/1, Fatih/İstanbul</address>
           </article>
           <article class="glass-card map-wrap" aria-label="Ofis Konumu">
             <iframe
               title="GORA Sigorta Konum"
-              src="https://maps.google.com/maps?q=40.82952147002469,29.305099456064625&z=15&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d752.6035301949481!2d28.923835269704377!3d41.0161950101053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDAwJzU4LjMiTiAyOMKwNTUnMjguMSJF!5e0!3m2!1sen!2str!4v1782735928188!5m2!1sen!2str"
+              allowfullscreen
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerpolicy="strict-origin-when-cross-origin"
             ></iframe>
           </article>
         </div>
@@ -154,33 +163,15 @@
             <h2>Anlaşmalı Sigorta Şirketlerimiz</h2>
             <p>Birlikte çalıştığımız güçlü sigorta markaları ile müşterilerimize geniş seçenek sunuyoruz.</p>
           </div>
-          <div class="logo-carousel" aria-label="Anlaşmalı sigorta şirketleri">
-            <div class="logo-track">
-              <div class="logo-set">
-                <div class="partner-card glass-card card-pad"><img src="https://www.mapfre.com.tr/sigorta-tr/media/MAPFRE_Sigorta_cmyk_250_1.png" alt="MAPFRE logosu" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.anadolusigorta.com.tr/Files/BasinKitleri/as_neverlose.jpg" alt="Anadolu Sigorta logosu" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.axasigorta.com.tr/wwwroot/t1/assets/images/logopage/sigorta_openw_rgb.png" alt="AXA Sigorta logosu" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.allianz.com.tr/content/dam/onemarketing/aztr/allianz/allianz-logo1.png" alt="Allianz logosu" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://cdn.somposigorta.com.tr/kurumsal-assets/svg/sompo.svg" alt="Sompo Sigorta logosu" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://img-aksigorta.mncdn.com/uploads/1/52/c721753b-56ce-48f3-bce0-97b8a00f2300.png?v=1.0.0" alt="Aksigorta logosu" class="partner-logo" /></div>
-              </div>
-              <div class="logo-set" aria-hidden="true">
-                <div class="partner-card glass-card card-pad"><img src="https://www.mapfre.com.tr/sigorta-tr/media/MAPFRE_Sigorta_cmyk_250_1.png" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.anadolusigorta.com.tr/Files/BasinKitleri/as_neverlose.jpg" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.axasigorta.com.tr/wwwroot/t1/assets/images/logopage/sigorta_openw_rgb.png" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.allianz.com.tr/content/dam/onemarketing/aztr/allianz/allianz-logo1.png" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://cdn.somposigorta.com.tr/kurumsal-assets/svg/sompo.svg" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://img-aksigorta.mncdn.com/uploads/1/52/c721753b-56ce-48f3-bce0-97b8a00f2300.png?v=1.0.0" alt="" class="partner-logo" /></div>
-              </div>
-              <div class="logo-set" aria-hidden="true">
-                <div class="partner-card glass-card card-pad"><img src="https://www.mapfre.com.tr/sigorta-tr/media/MAPFRE_Sigorta_cmyk_250_1.png" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.anadolusigorta.com.tr/Files/BasinKitleri/as_neverlose.jpg" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.axasigorta.com.tr/wwwroot/t1/assets/images/logopage/sigorta_openw_rgb.png" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://www.allianz.com.tr/content/dam/onemarketing/aztr/allianz/allianz-logo1.png" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://cdn.somposigorta.com.tr/kurumsal-assets/svg/sompo.svg" alt="" class="partner-logo" /></div>
-                <div class="partner-card glass-card card-pad"><img src="https://img-aksigorta.mncdn.com/uploads/1/52/c721753b-56ce-48f3-bce0-97b8a00f2300.png?v=1.0.0" alt="" class="partner-logo" /></div>
-              </div>
-            </div>
+          <div class="partner-grid" aria-label="Anlaşmalı sigorta şirketleri">
+            <article class="partner-card glass-card card-pad">
+              <img src="https://www.mapfre.com.tr/sigorta-tr/media/MAPFRE_Sigorta_cmyk_250_1.png" alt="MAPFRE Sigorta logosu" class="partner-logo" />
+              <h3>MAPFRE Sigorta</h3>
+            </article>
+            <article class="partner-card glass-card card-pad">
+              <img src="https://images.seeklogo.com/logo-png/30/1/demir-hayat-logo-png_seeklogo-308549.png" alt="Demir Hayat logosu" class="partner-logo" />
+              <h3>Demir Hayat</h3>
+            </article>
           </div>
         </div>
       </section>
